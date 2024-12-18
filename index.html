@@ -7,8 +7,10 @@
 </head>
 <body>
     <h1>Please complete the CAPTCHA to access the survey</h1>
-    <form action="https://qualtricsxmh7rvymrtz.qualtrics.com/jfe/form/SV_5my7nsDmWYAtmIe" method="GET">
-        <!-- Embed the reCAPTCHA with your Site Key -->
+    
+    <!-- Form sends data to your server for CAPTCHA verification -->
+    <form action="verify_recaptcha.php" method="POST">
+        <!-- reCAPTCHA widget -->
         <div class="g-recaptcha" data-sitekey="6LfCVJgqAAAAAHMqhnUWSoC-A5mtBvcVWQEN3r3r"></div>
         <br>
         <button type="submit">Verify</button>
