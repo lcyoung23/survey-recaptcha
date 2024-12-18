@@ -27,7 +27,7 @@ $resultJson = json_decode($result);
 // Check if reCAPTCHA was successful
 if ($resultJson->success) {
     // Redirect to Qualtrics survey
-    header("Location: https://qualtricsxmh7rvymrtz.qualtrics.com/jfe/form/SV_5my7nsDmWYAtmIe");
+    header(Location: "https://qualtricsxmh7rvymrtz.qualtrics.com/jfe/form/SV_5my7nsDmWYAtmIe");
     exit();
 } else {
     // Show error message
