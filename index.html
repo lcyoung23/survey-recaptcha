@@ -20,7 +20,17 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
         function handleFormSubmit(event) {
-            event.preventDefault(); // Prevent the form from submitting
+            event.preventDefault(); // Prevent the form from submitting normally
             
             // Check if the CAPTCHA was completed
             const recaptchaResponse = grecaptcha.getResponse();
+            if (recaptchaResponse) {
+                // Redirect to Calendly if the CAPTCHA is completed
+                window.location.href = "https://calendly.com/lindseycosartyoung/capstone-interviews";
+            } else {
+                alert("Please complete the CAPTCHA before proceeding.");
+            }
+        }
+    </script>
+</body>
+</html>
