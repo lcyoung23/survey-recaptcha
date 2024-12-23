@@ -26,8 +26,8 @@ $resultJson = json_decode($result);
 
 // Check if reCAPTCHA was successful
 if ($resultJson->success) {
-    // Redirect to Qualtrics survey
-    header("Location: https://qualtricsxmh7rvymrtz.qualtrics.com/jfe/form/SV_5my7nsDmWYAtmIe");
+    // Redirect to Calendly instead of Qualtrics
+    header("Location: https://calendly.com/lindseycosartyoung/capstone-interviews");
     exit();
 } else {
     // Show error message
