@@ -8,15 +8,19 @@
 <body>
     <h1>Please complete the CAPTCHA to access the scheduling page</h1>
     
-    <!-- Form sends data to your server for CAPTCHA verification -->
-    <form action="verify_recaptcha.php" method="POST">
-        <!-- reCAPTCHA widget -->
+    <!-- CAPTCHA Form -->
+    <form id="captcha-form" onsubmit="handleFormSubmit(event)">
+        <!-- Google reCAPTCHA -->
         <div class="g-recaptcha" data-sitekey="6LfCVJgqAAAAAHMqhnUWSoC-A5mtBvcVWQEN3r3r"></div>
         <br>
         <button type="submit">Verify</button>
     </form>
 
-    <!-- Load the reCAPTCHA script -->
+    <!-- Load the Google reCAPTCHA API -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-</body>
-</html>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault(); // Prevent the form from submitting
+            
+            // Check if the CAPTCHA was completed
+            const recaptchaResponse = grecaptcha.getResponse();
