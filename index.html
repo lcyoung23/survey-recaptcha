@@ -8,8 +8,8 @@
 <body>
     <h1>Please complete the CAPTCHA to access the scheduling page</h1>
     
-    <!-- Form to handle CAPTCHA verification -->
-    <form id="captcha-form" onsubmit="handleCaptchaRedirect(event)">
+    <!-- Form sends data to your server for CAPTCHA verification -->
+    <form action="verify_recaptcha.php" method="POST">
         <!-- reCAPTCHA widget -->
         <div class="g-recaptcha" data-sitekey="6LfCVJgqAAAAAHMqhnUWSoC-A5mtBvcVWQEN3r3r"></div>
         <br>
@@ -18,17 +18,5 @@
 
     <!-- Load the reCAPTCHA script -->
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script>
-        function handleCaptchaRedirect(event) {
-            event.preventDefault(); // Prevent the form from submitting
-            // Check if the CAPTCHA is completed
-            if (grecaptcha.getResponse() !== "") {
-                // Redirect to your Calendly link
-                window.location.href = "https://calendly.com/lindseycosartyoung/capstone-interviews";
-            } else {
-                alert("Please complete the CAPTCHA.");
-            }
-        }
-    </script>
 </body>
 </html>
